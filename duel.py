@@ -1,5 +1,5 @@
 import random
-from flask import Flask, redirect, request 
+from flask import Flask, redirect, request ,render_template
 
 game = Flask(__name__)
 @game.route('/duel', methods=['GET', 'POST'])
