@@ -1,0 +1,12 @@
+<form class="form-inline" method="POST" action="{{ url_for('duel_numero_uno') }}">
+    <div class="form-group">
+      <div class="input-group">
+          <span class="input-group-addon">Which way do you aim?</span>
+              <select name="selected" class="selectpicker form-control">
+                {% for answer in answers %}
+                <option value="{{answer}}">{{answer}}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <button type="submit" class="btn btn-default">Go</button>
+          </div>

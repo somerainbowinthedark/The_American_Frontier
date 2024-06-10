@@ -1,10 +1,14 @@
-import random
 from flask import Flask, redirect, request ,render_template
+from titles import app
+from titles import character_select
 
 game = Flask(__name__)
 @game.route('/duel', methods=['GET', 'POST'])
 def duel_numero_uno():
     answers = ['left', 'right', 'center']
+
+    if request.method == 'GET':
+        return render_template('duels.html', answers = answers)
 
     if request.method == 'POST':
         selected = request.form['selected']
