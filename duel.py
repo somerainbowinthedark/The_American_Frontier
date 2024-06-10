@@ -17,12 +17,12 @@ def duel_numero_uno():
         
 @game.route('/morir', methods=['GET', 'POST'])
 def lose():
-    return ''
+    return 'uh oh'
 
 @game.route('/mierda', methods=['GET', 'POST'])
 def tie():
-    return ''
+    return 'You both shot each other in the shoulder! Its a draw!'
 
 @game.route('/ganar', methods=['GET', 'POST'])
 def win():
-    return ''
+    return 'You shot em right in the chest! Congrats!'
