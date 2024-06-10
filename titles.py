@@ -6,7 +6,7 @@ IMG_DIR = './static'
 
 @app.route('/welcome')
 def title_screen():
-        return render_template('placeholder.html')
+        return render_template('titlescreen.html')
 
 @app.route('/characters', methods=['GET', 'POST'])
 def character_select():
@@ -22,6 +22,7 @@ def character_select():
          return redirect('/thievery')
     if selected == cowboys[1]:
          return redirect('/duel')
+    
 
 if __name__ == '__main__':
     app.run(host='localhost', port=2469)

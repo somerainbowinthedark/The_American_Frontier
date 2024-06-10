@@ -6,3 +6,4 @@ import random
 
 @app.route('/thievery', methods =['GET', 'POST'])
 def theives():
+    return 'OK'
