@@ -1,0 +1,14 @@
+<form class="form-inline" method="POST" action="{{ url_for('character_select') }}">
+    <div class="form-group">
+      <div class="input-group">
+          <span class="input-group-addon">Choose your cowboy</span>
+              <select name="selected" class="selectpicker form-control">
+                {% for cowboy in cowboys %}
+                <option value="{{cowboy}}">{{cowboy}}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <button type="submit" class="btn btn-default">Go</button>
+          </div>
+      </form>
+      <img src="{{url_for('static', filename='boys.jpg')}}" align="left"/>
