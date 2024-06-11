@@ -1,4 +1,4 @@
-
+run the code in titles.py and click the link in the terminal. Add "/welcome" to the end to get to the title screen and afterwards go to http://localhost:2469/characters and then select the charater you want to do the activity that you want in the drop down. Then select the answer you want to do that goes with activety, THEN BADA BING BADA BOOM THATS IT
 
 
 
