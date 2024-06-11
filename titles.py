@@ -52,12 +52,15 @@ def duel_numero_uno():
 
     if request.method == 'POST':
         selected = request.form['selected']
-        if selected == answers[0]:
-            return redirect('/morir')
-        if selected == answers[1]:
-            return redirect('/mierda')
-        if selected == answers[2]:
-            return redirect('/ganar')
+        return redirect(more_redirects(answers, selected))
+        
+def more_redirects(aim: [], selected: str) -> str:
+     if selected == aim[0]:
+          return '/morir'
+     if selected == aim[1]:
+          return '/mierda'
+     if selected == aim[2]:
+          return '/ganar'
         
 @app.route('/morir')
 def lose():
