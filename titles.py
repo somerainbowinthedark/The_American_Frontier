@@ -23,6 +23,22 @@ def character_select():
     if selected == cowboys[1]:
          return redirect('/duel')
     
+
+@app.route('/thievery', methods =['GET', 'POST'])
+def thieves():
+    objects = ['horse', 'wagon', 'money']
+    if request.method == 'GET':
+         return render_template('thieving.html', objects = objects)
+    
+    if request.method == 'POST':
+         selected = request.form['selected']
+         if selected == objects[0]:
+              return redirect('/woohoo')
+         if selected == objects[1]:
+              return redirect('/ohdamn')
+         if selected == objects[2]:
+              return redirect('/awjeez')
+
 @app.route('/duel', methods =)
 def duel_numero_uno():
     answers = ['left', 'right', 'center']
@@ -50,6 +66,19 @@ def tie():
 @app.route('/ganar')
 def win():
     return 'You shot em right in the chest! Congrats!'
+         
+@app.route('/woohoo')
+def horsie():
+     return 'You rode that horse off into the sunset!'
 
+@app.route('/ohdamn')
+def owie():
+     return 'The owner caught you stealing his wagon!'
+
+@app.route('/awjeez')
+def popo():
+     return 'The cops caught ya! Yur getting thrown into the slammer >:( '
+
+    
 if __name__ == '__main__':
     app.run(host='localhost', port=2469)
