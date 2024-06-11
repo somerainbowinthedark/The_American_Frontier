@@ -23,6 +23,33 @@ def character_select():
     if selected == cowboys[1]:
          return redirect('/duel')
     
+@app.route('/duel', methods =)
+def duel_numero_uno():
+    answers = ['left', 'right', 'center']
+
+    if request.method == 'GET':
+        return render_template('duels.html', answers = answers)
+
+    if request.method == 'POST':
+        selected = request.form['selected']
+        if selected == answers[0]:
+            return redirect('/morir')
+        if selected == answers[1]:
+            return redirect('/mierda')
+        if selected == answers[2]:
+            return redirect('/ganar')
+        
+@app.route('/morir')
+def lose():
+    return 'uh oh'
+
+@app.route('/mierda')
+def tie():
+    return 'You both shot each other in the shoulder! Its a draw!'
+
+@app.route('/ganar')
+def win():
+    return 'You shot em right in the chest! Congrats!'
 
 if __name__ == '__main__':
     app.run(host='localhost', port=2469)
