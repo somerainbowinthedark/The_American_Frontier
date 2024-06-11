@@ -39,7 +39,7 @@ def thieves():
          if selected == objects[2]:
               return redirect('/awjeez')
 
-@app.route('/duel', methods =)
+@app.route('/duel', methods =['GET', 'POST'])
 def duel_numero_uno():
     answers = ['left', 'right', 'center']
 
