@@ -32,12 +32,16 @@ def thieves():
     
     if request.method == 'POST':
          selected = request.form['selected']
-         if selected == objects[0]:
-              return redirect('/woohoo')
-         if selected == objects[1]:
-              return redirect('/ohdamn')
-         if selected == objects[2]:
-              return redirect('/awjeez')
+         return redirect(get_redirect(objects, selected))
+         
+def get_redirect(items: [], selected: str) -> str:
+     if selected == items[0]:
+          return '/woohoo'
+     if selected == items[1]:
+          return '/ohdamn'
+     if selected == items[2]:
+          return '/awjeez'
+     
 
 @app.route('/duel', methods = ['GET', 'POST'])
 def duel_numero_uno():
